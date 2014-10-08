@@ -16,5 +16,8 @@
     <string name="TUser">Type User</string>
     <string name="TPass">Type Password</string>
     <string name="Cancel">Cancel</string>
+    <string name="Create">Create</string>
+    <string name="title_activity_user_page">UserPage</string>
+    <string name="title_activity_sample">SampleActivity</string>
 
 </resources>

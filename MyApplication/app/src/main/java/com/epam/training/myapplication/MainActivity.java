@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -39,6 +40,16 @@ public class MainActivity extends ActionBarActivity {
         attempts++;
         TextView tView= (TextView)findViewById(R.id.Attempts);
         tView.setText(new String().valueOf(attempts));
+        EditText Login = (EditText)findViewById(R.id.Login);
+        if (Login.getText().toString().equals("Seva")) {
+            Intent intent = new Intent(this, UserPage.class);
+            intent.putExtra("Login", Login.getText().toString());
+            startActivity(intent);
+        } else{
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Wrong!", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 
     public void onCreateClick(View view) {
@@ -48,7 +59,7 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        savedInstanceState.putInt("Attempts",attempts);
+        savedInstanceState.putInt("Attempts", attempts);
         super.onSaveInstanceState(savedInstanceState);
 
     }
