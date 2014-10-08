@@ -26,7 +26,8 @@
         </activity>
         <activity
             android:name=".SampleActivity"
-            android:label="@string/title_activity_sample" >
+            android:label="@string/title_activity_sample"
+            android:launchMode="singleTop">
         </activity>
     </application>
 
