@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 
 
-public class CreateUser extends ActionBarActivity {
+public class CreateUserActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -3,8 +3,6 @@ package com.epam.training.myapplication;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -22,7 +20,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView tView= (TextView)findViewById(R.id.Attempts);
-        tView.setText(new String().valueOf(attempts));
+        tView.setText(String.valueOf(attempts));
     }
 
     @Override
@@ -42,18 +40,17 @@ public class MainActivity extends ActionBarActivity {
         tView.setText(new String().valueOf(attempts));
         EditText Login = (EditText)findViewById(R.id.Login);
         if (Login.getText().toString().equals("Seva")) {
-            Intent intent = new Intent(this, UserPage.class);
+            Intent intent = new Intent(this, UserPageActivity.class);
             intent.putExtra("Login", Login.getText().toString());
             startActivity(intent);
         } else{
-            Toast toast = Toast.makeText(getApplicationContext(),
-                    "Wrong!", Toast.LENGTH_SHORT);
+            Toast toast = Toast.makeText(getApplicationContext(),"Wrong!", Toast.LENGTH_SHORT);
             toast.show();
         }
     }
 
     public void onCreateClick(View view) {
-        Intent intent = new Intent(this, CreateUser.class);
+        Intent intent = new Intent(this, CreateUserActivity.class);
         startActivityForResult(intent, REQUEST_LOGIN);
     }
 
@@ -68,6 +65,6 @@ public class MainActivity extends ActionBarActivity {
         super.onRestoreInstanceState(savedInstanceState);
         attempts=savedInstanceState.getInt("Attempts");
         TextView tView= (TextView)findViewById(R.id.Attempts);
-        tView.setText(new String().valueOf(attempts));
+        tView.setText(String.valueOf(attempts));
     }
 }

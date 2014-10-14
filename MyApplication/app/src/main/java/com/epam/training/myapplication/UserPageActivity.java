@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 
-public class UserPage extends ActionBarActivity {
+public class UserPageActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
