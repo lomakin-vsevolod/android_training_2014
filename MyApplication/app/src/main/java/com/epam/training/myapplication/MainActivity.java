@@ -39,14 +39,14 @@ public class MainActivity extends ActionBarActivity {
         TextView tView= (TextView)findViewById(R.id.Attempts);
         tView.setText(new String().valueOf(attempts));
         EditText Login = (EditText)findViewById(R.id.Login);
-        if (Login.getText().toString().equals("Seva")) {
+       // if (Login.getText().toString().equals("Seva")) {
             Intent intent = new Intent(this, UserPageActivity.class);
             intent.putExtra("Login", Login.getText().toString());
             startActivity(intent);
-        } else{
-            Toast toast = Toast.makeText(getApplicationContext(),"Wrong!", Toast.LENGTH_SHORT);
-            toast.show();
-        }
+        //} else{
+        //   Toast toast = Toast.makeText(getApplicationContext(),"Wrong!", Toast.LENGTH_SHORT);
+        //  toast.show();
+        //}
     }
 
     public void onCreateClick(View view) {
