@@ -17,6 +17,6 @@ public class MainTestActivity extends ActionBarActivity {
     }
 
     public void onStartSampleClick(View view) {
-        startActivity(new Intent(this,LoginTestActivity.class));
+        startActivity(new Intent(this,ListViewExampleActivity.class));
     }
 }

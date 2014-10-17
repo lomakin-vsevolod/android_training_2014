@@ -9,7 +9,7 @@
         android:id="@+id/Avatar"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:background="@drawable/Avatar"
+        android:background="@drawable/avatar"
         android:layout_marginTop="25dp"
         android:layout_marginLeft="25dp"
         android:layout_alignParentLeft="true"
