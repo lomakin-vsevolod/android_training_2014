@@ -1,4 +1,4 @@
-package com.epam.training.myapplication.DataSource;
+package com.epam.training.myapplication.source;
 
 import android.graphics.Bitmap;
 

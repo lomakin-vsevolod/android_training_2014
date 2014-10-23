@@ -1,15 +1,13 @@
-package com.epam.training.myapplication.Helper;
+package com.epam.training.myapplication.helper;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.epam.training.myapplication.DataSource.Item;
 import com.epam.training.myapplication.R;
+import com.epam.training.myapplication.source.Item;
 
 import java.util.List;
 

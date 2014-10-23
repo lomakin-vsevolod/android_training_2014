@@ -23,5 +23,6 @@
     <string name="title_activity_login_test">LoginTestActivity</string>
     <string name="title_activity_vk">VkActivity</string>
     <string name="title_activity_list_view_example">ListViewExampleActivity</string>
+    <string name="title_activity_details">DetailsActivity</string>
 
 </resources>
