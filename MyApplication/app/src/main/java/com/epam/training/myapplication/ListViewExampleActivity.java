@@ -2,6 +2,7 @@ package com.epam.training.myapplication;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -18,6 +19,7 @@ import com.epam.training.myapplication.bo.Note;
 import com.epam.training.myapplication.bo.NoteGsonModel;
 import com.epam.training.myapplication.callbacks.SimpleCallback;
 import com.epam.training.myapplication.helper.DataManager;
+import com.epam.training.myapplication.processing.FileProcessor;
 import com.epam.training.myapplication.processing.NoteArrayProcessor;
 import com.epam.training.myapplication.processing.RedirectProcessor;
 import com.epam.training.myapplication.processing.StringProcessor;
@@ -33,7 +35,7 @@ public class ListViewExampleActivity extends ActionBarActivity implements DataMa
 
     public static final String URL = "https://dl.dropboxusercontent.com/u/16403954/test.json";
     private ArrayAdapter mAdapter;
-
+    private AssetManager am;
     private SwipeRefreshLayout mSwipeRefreshLayout;
 
     @Override
@@ -44,6 +46,18 @@ public class ListViewExampleActivity extends ActionBarActivity implements DataMa
         final HttpDataSource dataSource = HttpDataSource.get(ListViewExampleActivity.this);
         final NoteArrayProcessor processor = new NoteArrayProcessor();
 
+        SimpleCallback<String> callback = new SimpleCallback<String>() {
+
+            @Override
+            public void onDone(Object data) {
+                Log.d("MainActivity", "onDone " + data);
+            }
+
+        };
+
+        final FileProcessor fileprocessor = new FileProcessor();
+        final FileDataSource filedataSource = FileDataSource.get(ListViewExampleActivity.this);
+        StringProcessor stringProcessor = new StringProcessor();
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -57,10 +71,11 @@ public class ListViewExampleActivity extends ActionBarActivity implements DataMa
                 URL,
                 dataSource,
                 processor);
-      /* DataManager.loadData(ListViewExampleActivity.this,
-         /      "test.txt",
+
+        DataManager.loadData(callback,
+                "test.txt",
                 filedataSource,
-                fileprocessor);*/
+                stringProcessor);
 
     }
 
